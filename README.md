@@ -84,7 +84,7 @@ COPY INTO "MYDB"."MYSCHEMA"."EVENTTABLE"
     FROM (select upper(t.$1) from @tallyevent_s3_stage t);
    
    
--------------------------------------------------------------------------------------------------------
+
 
 ##MISC
 SELECT * FROM "MYDB"."MYSCHEMA"."EVENTTABLE"`
