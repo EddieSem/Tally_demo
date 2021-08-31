@@ -1,7 +1,7 @@
 # Tally_demo
 
 
-Assignment: Use snowflake or similar to receive the pipeline from any 2 sources - could be streaming data or ETL or DB updates. 
+Assignment: Use snowflake or similar to receive the pipeline from any 2 sources - could be streaming data or ETL or DB updates. In any one of them showcase some transformation step. For example, you can create a pipeline from S3 into Snowflake and a GitHub API feed. Introduce a transformation in the S3 stream and capitalise all words in that stream. 
 
 *Loading Data into Snowflake via Bulk Loading Using COPY from Amazon S3*
 
