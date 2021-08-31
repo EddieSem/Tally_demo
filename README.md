@@ -83,15 +83,12 @@ CREATE TABLE IF NOT EXISTS mydb.myschema.eventtable (
 COPY INTO "MYDB"."MYSCHEMA"."EVENTTABLE"
     FROM (select upper(t.$1) from @tallyevent_s3_stage t);
    
-   
-
-
 ##MISC
 SELECT * FROM "MYDB"."MYSCHEMA"."EVENTTABLE"`
 
- select t.$1 from @tallyevent_s3_stage t;
- upper(t.$1)
- 
+select t.$1 from @tallyevent_s3_stage t;
+upper(t.$1)
+
 ##mydb.myschema.covidtable
 CREATE TABLE IF NOT EXISTS mydb.myschema.covidtable
 COPY INTO COVIDTABLE(PEOPLE_POSITIVE_CASES_COUNT, COUNTY_NAME, PROVINCE_STATE_NAME, REPORT_DATE, CONTINENT_NAME, DATA_SOURCE_NAME, PEOPLE_DEATH_NEW_COUNT, COUNTY_FIPS_NUMBER, COUNTRY_ALPHA_3_CODE, COUNTRY_SHORT_NAME, COUNTRY_ALPHA_2_CODE, PEOPLE_POSITIVE_NEW_CASES_COUNT, PEOPLE_DEATH_COUNT)
@@ -108,7 +105,6 @@ COPY INTO COVIDTABLE(PEOPLE_POSITIVE_CASES_COUNT, COUNTY_NAME, PROVINCE_STATE_NA
       $12:PEOPLE_POSITIVE_NEW_CASES_COUNT VARCHAR,
       $13:PEOPLE_DEATH_COUNT VARCHAR 
       from @tallycovid_s3_stage t);
-
 
 COPY INTO "MYDB"."MYSCHEMA"."COVIDTABLE"
     FROM (select upper(t.$1),t.$2,t.$3,t.$4,t.$5,t.$6,t.$7,t.$8,t.$9,t.$10,t.$11,t.$12,t.$13 from @tallycovid_s3_stage t)
@@ -128,7 +124,6 @@ CREATE TABLE IF NOT EXISTS mydb.myschema.cryptotable (
   Volume_BTC VARCHAR,
   Volume_USD VARCHAR
 );
-
 
 COPY INTO "MYDB"."MYSCHEMA"."CRYPTOTABLE"
     FROM (select t.$1,t.$2,t.$3,t.$4,t.$5,t.$6,t.$7,t.$8,t.$9 from @tally_s3_stage t)
